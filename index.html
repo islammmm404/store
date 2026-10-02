@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="منصة لعرض الألعاب وتقديم خدمات تطوير وتسويق الألعاب.">
+  <title>دار الألعاب | ألعاب وخدمات وتسويق</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Marhey:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/calligraphy.png">
+  <script>try{var t=localStorage.getItem("theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="dark"}</script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-glow"></div>
+  <div class="top-banner"><img src="assets/calligraphy.png" alt="اقرأ باسم ربك الذي خلق"></div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="دار الألعاب">
+        <span class="brand-mark">د</span>
+        <span>
+          <strong>دار الألعاب</strong>
+          <small>Games & Creative Services</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#home">الرئيسية</a>
+        <a href="#games">الألعاب</a>
+        <a href="#services">الخدمات</a>
+        <a href="#marketing">التسويق</a>
+        <a href="#articles">المقالات</a>
+        <a href="#work">أعمالنا</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+
+      <a class="nav-cta" href="#contact">اطلب خدمة</a>
+      <button class="icon-btn" id="musicBtn" aria-label="تشغيل الموسيقى" title="موسيقى">♪</button>
+      <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع" title="الوضع الداكن / الفاتح">☾</button>
+      <audio id="bgm" src="assets/music.mp3" loop preload="none"></audio>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span></span> استوديو مستقل للألعاب والخدمات الرقمية</div>
+          <h1>ألعاب جميلة.<br><em>أفكار تصل للجمهور.</em></h1>
+          <p class="hero-text">
+            نعرض ألعابنا، نساعد المطورين وأصحاب المشاريع، ونقدم خدمات تسويقية
+            تساعد منتجات الألعاب على الوصول إلى اللاعبين بشكل احترافي وهادئ.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#games">استكشف الألعاب <span>←</span></a>
+            <a class="btn btn-ghost" href="#services">تعرف على خدماتنا</a>
+          </div>
+          <div class="hero-notes">
+            <div><strong>03+</strong><span>مجالات خدمة</span></div>
+            <div><strong>24/7</strong><span>استقبال الطلبات</span></div>
+            <div><strong>∞</strong><span>أفكار جديدة</span></div>
+          </div>
+        </div>
+
+        <div class="hero-art reveal">
+          <div class="art-frame">
+            <div class="art-top"><span>FEATURED PROJECT</span><span>2026</span></div>
+            <div class="art-scene">
+              <div class="moon"></div>
+              <div class="mountain mountain-back"></div>
+              <div class="mountain mountain-front"></div>
+              <div class="mist"></div>
+              <div class="tree tree-1"></div>
+              <div class="tree tree-2"></div>
+              <div class="tree tree-3"></div>
+              <div class="scene-title">
+                <small>قريبًا</small>
+                <strong>THE ASH KNIGHT</strong>
+              </div>
+            </div>
+            <div class="art-bottom">
+              <span>Action RPG</span>
+              <span class="line"></span>
+              <span>PC • Godot</span>
+            </div>
+          </div>
+          <div class="floating-card">
+            <span class="status-dot"></span>
+            <div><b>مشروع مميز</b><small>قيد التطوير</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="marquee-band">
+      <div class="marquee-track">
+        <span>GAME DEVELOPMENT</span><i>✦</i><span>GAME MARKETING</span><i>✦</i>
+        <span>CREATIVE SERVICES</span><i>✦</i><span>COMMUNITY</span><i>✦</i>
+        <span>GAME DEVELOPMENT</span><i>✦</i><span>GAME MARKETING</span><i>✦</i>
+      </div>
+    </section>
+
+    <section class="section games-section" id="games">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-kicker">01 — ألعابنا</span>
+            <h2>عوالم نصنعها <em>بشغف</em></h2>
+          </div>
+          <p>مجموعة من المشاريع التي نعمل عليها أو نعرضها هنا. استخدم التصنيف لاستكشافها.</p>
+        </div>
+
+        <div class="filters reveal" role="group" aria-label="تصفية الألعاب">
+          <button class="filter active" data-filter="all">الكل</button>
+          <button class="filter" data-filter="action">أكشن</button>
+          <button class="filter" data-filter="rpg">RPG</button>
+          <button class="filter" data-filter="indie">مستقلة</button>
+        </div>
+
+        <div class="games-grid" id="gamesGrid">
+          <article class="game-card featured reveal" data-category="action rpg">
+            <div class="game-cover cover-ash">
+              <span class="game-badge">قيد التطوير</span>
+              <div class="cover-content"><small>ACTION RPG</small><strong>The Ash Knight</strong></div>
+            </div>
+            <div class="game-info">
+              <div><h3>The Ash Knight</h3><span>PC</span></div>
+              <p>رحلة فارس في عالم مظلم مليء بالأسرار والقتال.</p>
+              <button class="text-btn game-details" data-title="The Ash Knight" data-description="لعبة أكشن RPG تركز على الاستكشاف والقتال وبناء عالم غني بالتفاصيل.">عرض التفاصيل <b>←</b></button>
+            </div>
+          </article>
+
+          <article class="game-card reveal" data-category="action indie">
+            <div class="game-cover cover-nitro">
+              <span class="game-badge">Concept</span>
+              <div class="cover-content"><small>ARCADE RACING</small><strong>Nitro Legends</strong></div>
+            </div>
+            <div class="game-info">
+              <div><h3>Nitro Legends</h3><span>PC</span></div>
+              <p>سباقات أركيد سريعة، سيارات مختلفة وطرق مليئة بالمفاجآت.</p>
+              <button class="text-btn game-details" data-title="Nitro Legends" data-description="تجربة سباقات أركيد بأسلوب سينمائي وحركة سريعة ومنافسة ممتعة.">عرض التفاصيل <b>←</b></button>
+            </div>
+          </article>
+
+          <article class="game-card reveal" data-category="rpg indie">
+            <div class="game-cover cover-code">
+              <span class="game-badge">Prototype</span>
+              <div class="cover-content"><small>PUZZLE / CODE</small><strong>Code Paper</strong></div>
+            </div>
+            <div class="game-info">
+              <div><h3>Code Paper</h3><span>PC</span></div>
+              <p>لعبة ألغاز بسيطة تعتمد على المنطق والبرمجة وحل التحديات.</p>
+              <button class="text-btn game-details" data-title="Code Paper" data-description="مشروع تجريبي يحول مفاهيم البرمجة الأساسية إلى تحديات وألغاز داخل اللعبة.">عرض التفاصيل <b>←</b></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-kicker">02 — خدماتنا</span>
+            <h2>من الفكرة إلى <em>الوصول</em></h2>
+          </div>
+          <p>خدمات مرنة للمطورين وأصحاب المشاريع، من بناء المنتج إلى تقديمه للجمهور.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <span class="service-number">01</span><div class="service-icon">◆</div>
+            <h3>تطوير الألعاب</h3>
+            <p>مساعدة في بناء أنظمة اللعب، الواجهات، النماذج الأولية وتجهيز المشروع للنشر.</p>
+            <a href="#contact">اطلب الخدمة <b>←</b></a>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-number">02</span><div class="service-icon">◌</div>
+            <h3>تصميم وتجربة المستخدم</h3>
+            <p>واجهات واضحة ومريحة وهوية بصرية متناسقة مع نوع اللعبة والجمهور المستهدف.</p>
+            <a href="#contact">اطلب الخدمة <b>←</b></a>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-number">03</span><div class="service-icon">↗</div>
+            <h3>التسويق للألعاب</h3>
+            <p>خطة محتوى وحملات رقمية تساعدك على تقديم لعبتك بشكل واضح وبناء جمهور حولها.</p>
+            <a href="#contact">اطلب الخدمة <b>←</b></a>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-number">04</span><div class="service-icon">✦</div>
+            <h3>صناعة المحتوى</h3>
+            <p>مقاطع قصيرة، صور، منشورات ومواد تعريفية مناسبة للمتاجر ومنصات التواصل.</p>
+            <a href="#contact">اطلب الخدمة <b>←</b></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section marketing-section" id="marketing">
+      <div class="container marketing-layout">
+        <div class="marketing-copy reveal">
+          <span class="section-kicker">03 — التسويق</span>
+          <h2>لا يكفي أن تكون اللعبة <em>جيدة</em>.</h2>
+          <p>اللاعب يحتاج أن يراها، يفهمها، ويتحمس لتجربتها. لذلك نبني التسويق حول قصة اللعبة وشخصيتها بدل الاعتماد على إعلان عشوائي.</p>
+          <a class="btn btn-primary" href="#contact">ناقش مشروعك معنا</a>
+        </div>
+        <div class="marketing-list reveal">
+          <div class="marketing-item"><span>01</span><div><h3>المحتوى القصير</h3><p>TikTok • Reels • Shorts</p></div><b>↗</b></div>
+          <div class="marketing-item"><span>02</span><div><h3>بناء المجتمع</h3><p>Discord • Social Communities</p></div><b>↗</b></div>
+          <div class="marketing-item"><span>03</span><div><h3>صناع المحتوى</h3><p>Creators • Reviews • Gameplay</p></div><b>↗</b></div>
+          <div class="marketing-item"><span>04</span><div><h3>حملات الإطلاق</h3><p>Awareness • Wishlist • Launch</p></div><b>↗</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section articles-section" id="articles">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="section-kicker">المقالات</span><h2>معرفة تفيد <em>مشروعك</em></h2></div>
+          <p>مقالات قصيرة عن تسويق الألعاب وبناء المجتمع وبداية المشاريع.</p>
+        </div>
+        <div class="articles-grid">
+          <article class="article-card reveal"><span class="tag">تسويق</span><h3>كيف تسوّق لعبتك المستقلة من اليوم الأول</h3><p>التسويق يبدأ مع أول نموذج أولي، لا قبل الإطلاق بأسبوع.</p><small>قراءة 3 دقائق</small><button class="text-btn article-open">اقرأ المقال <b>←</b></button>
+            <div class="article-body" hidden>
+              <p>أكبر خطأ يقع فيه المطورون هو تأجيل التسويق إلى ما بعد انتهاء اللعبة. الجمهور يحتاج وقتاً ليعرفك ويتحمس، فابدأ مبكراً.</p>
+              <h4>ابدأ بهذه الخطوات</h4>
+              <ul><li>حدّد جمهورك: من اللاعب الذي ستعجبه لعبتك؟</li><li>اكتب جملة واحدة تشرح اللعبة وتجذب الانتباه.</li><li>شارك التقدم بانتظام: صور ومقاطع قصيرة من التطوير.</li><li>اجمع الناس في مكان واحد: قائمة بريد أو سيرفر Discord.</li><li>راقب ما يتفاعل معه الناس وكرّره.</li></ul>
+              <p>القاعدة: اجعل اللاعب يرى لعبتك أكثر من مرة قبل يوم الإطلاق.</p>
+            </div></article>
+          <article class="article-card reveal"><span class="tag">تسويق</span><h3>المحتوى القصير: TikTok وReels وShorts للألعاب</h3><p>مقطع قصير جيد قد يعرّف آلاف اللاعبين بلعبتك.</p><small>قراءة 3 دقائق</small><button class="text-btn article-open">اقرأ المقال <b>←</b></button>
+            <div class="article-body" hidden>
+              <p>المقاطع القصيرة أسرع طريقة ليكتشفك لاعبون جدد، لأن المنصات تعرض المحتوى للناس حتى لو لم يتابعوك.</p>
+              <h4>نصائح عملية</h4>
+              <ul><li>اعرض أجمل لحظة في أول ثانيتين.</li><li>اجعل المقطع واضحاً بدون صوت، مع نص مكتوب.</li><li>انشر بانتظام بدل مقطع واحد كل شهر.</li><li>جرّب أفكاراً مختلفة: لحظة قتال، خطأ مضحك، قبل وبعد.</li><li>انقل نفس المقطع إلى المنصات الثلاث.</li></ul>
+              <p>لا تنتظر الكمال، النشر والتعلم من النتائج أهم من التحضير الطويل.</p>
+            </div></article>
+          <article class="article-card reveal"><span class="tag">مجتمع</span><h3>بناء مجتمع حول لعبتك على Discord</h3><p>المجتمع الصغير النشط أقوى من جمهور كبير صامت.</p><small>قراءة 3 دقائق</small><button class="text-btn article-open">اقرأ المقال <b>←</b></button>
+            <div class="article-body" hidden>
+              <p>سيرفر Discord هو المكان الذي يتحول فيه المتابع إلى لاعب مخلص يدعم لعبتك وينشرها.</p>
+              <h4>ابدأ بسيطاً</h4>
+              <ul><li>قناة ترحيب مع قواعد قصيرة وواضحة.</li><li>قناة للأخبار وقناة للملاحظات والأفكار.</li><li>شارك نسخاً تجريبية واطلب رأي الأعضاء.</li><li>رد على الناس بنفسك، فهذا ما يبني الثقة.</li><li>نظّم فعاليات صغيرة مثل مسابقة أو جلسة لعب جماعية.</li></ul>
+              <p>تجنب إنشاء قنوات كثيرة في البداية، فالسيرفر الفارغ يبدو ميتاً.</p>
+            </div></article>
+          <article class="article-card reveal"><span class="tag">تطوير</span><h3>ابدأ لعبتك بنموذج أولي سريع</h3><p>جرّب الفكرة في أيام قبل أن تستثمر شهوراً.</p><small>قراءة 2 دقيقة</small><button class="text-btn article-open">اقرأ المقال <b>←</b></button>
+            <div class="article-body" hidden>
+              <p>النموذج الأولي (Prototype) يجيب عن سؤال واحد: هل الفكرة ممتعة فعلاً؟</p>
+              <h4>الطريقة</h4>
+              <ul><li>اختر ميكانيكا واحدة أساسية فقط.</li><li>ابنها بأبسط شكل ممكن بدون رسومات نهائية.</li><li>اجعل أصدقاءك يجربونها وراقب ردود أفعالهم.</li><li>قرر: تكمل، تعدّل، أو تبدأ فكرة جديدة.</li></ul>
+              <p>لا تصقل ما لم تتأكد أنه يستحق، وهذا يوفر عليك وقتاً كبيراً.</p>
+            </div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section work-section" id="work">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="section-kicker">04 — أعمالنا</span><h2>تفاصيل صغيرة، <em>فرق كبير</em></h2></div>
+          <p>مساحة لعرض المشاريع، الصور، الحملات والنتائج عندما يبدأ الموقع في استقبال أعمال حقيقية.</p>
+        </div>
+        <div class="work-grid">
+          <div class="work-item large reveal"><div class="work-visual visual-forest"><span>01</span><strong>عالم اللعبة</strong></div><div class="work-caption"><b>Environment & World</b><small>تصميم عالم ثلاثي الأبعاد</small></div></div>
+          <div class="work-item reveal"><div class="work-visual visual-ui"><span>02</span><strong>واجهة المستخدم</strong></div><div class="work-caption"><b>UI / UX</b><small>واجهة هادئة وعملية</small></div></div>
+          <div class="work-item reveal"><div class="work-visual visual-social"><span>03</span><strong>حملة تسويقية</strong></div><div class="work-caption"><b>Marketing</b><small>محتوى لمنصات التواصل</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-box reveal">
+        <div class="contact-intro">
+          <span class="section-kicker">05 — تواصل معنا</span>
+          <h2>عندك فكرة؟<br><em>خلينا نبدأ.</em></h2>
+          <p>اكتب لنا عن مشروعك أو الخدمة التي تحتاجها، وسنراجع التفاصيل ونعود إليك.</p>
+          <div class="contact-detail"><span>✉</span><div><small>البريد</small><b><a href="mailto:islamhamdy57777@gmail.com">islamhamdy57777@gmail.com</a></b></div></div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <label>الاسم<input type="text" name="name" placeholder="اكتب اسمك" required></label>
+          <label>البريد الإلكتروني<input type="email" name="email" placeholder="name@example.com" required></label>
+          <label>نوع الخدمة
+            <select name="service">
+              <option>تطوير الألعاب</option><option>التصميم و UI/UX</option><option>التسويق</option><option>صناعة المحتوى</option><option>أخرى</option>
+            </select>
+          </label>
+          <label>رسالتك<textarea name="message" rows="5" placeholder="حدثنا عن فكرتك..." required></textarea></label>
+          <button class="btn btn-primary" type="submit">إرسال الطلب <span>←</span></button>
+          <p class="form-message" id="formMessage" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div><a class="brand" href="#home"><span class="brand-mark">د</span><span><strong>دار الألعاب</strong><small>Games & Creative Services</small></span></a><p>نبني الأفكار، نعرض الألعاب، ونساعدها على الوصول.</p></div>
+      <div class="footer-links"><a href="#games">الألعاب</a><a href="#services">الخدمات</a><a href="#marketing">التسويق</a><a href="#articles">المقالات</a><a href="#contact">تواصل</a></div>
+      <div class="copyright">© <span id="year"></span> دار الألعاب. جميع الحقوق محفوظة.</div>
+    </div>
+  </footer>
+
+  <div class="modal" id="gameModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card">
+      <button class="modal-close" data-close-modal aria-label="إغلاق">×</button>
+      <span class="section-kicker">GAME DETAILS</span>
+      <h2 id="modalTitle">عنوان اللعبة</h2>
+      <p id="modalDescription"></p>
+      <div class="modal-body" id="modalBody"></div>
+      <a href="#contact" class="btn btn-primary" data-close-modal>تواصل حول المشروع</a>
+    </div>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
