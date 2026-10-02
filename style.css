@@ -174,3 +174,29 @@ em{color:var(--teal);text-decoration:underline;text-decoration-thickness:2px;tex
   .container{width:min(100% - 30px,600px)}.section{padding:75px 0}.nav-wrap{height:70px}.nav-cta{display:none}.menu-toggle{display:block;margin-right:auto}.main-nav{position:absolute;top:70px;right:15px;left:15px;display:none;flex-direction:column;align-items:stretch;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px;box-shadow:var(--shadow);gap:2px}.main-nav.open{display:flex}.main-nav a{padding:11px 12px}.hero{padding:65px 0 85px}.hero-grid{grid-template-columns:1fr;gap:55px}.hero h1{font-size:43px}.hero-art{max-width:540px;margin:auto;width:100%}.art-scene{height:370px}.floating-card{left:10px}.section-heading{display:block}.section-heading p{margin-top:15px}.games-grid,.services-grid,.work-grid{grid-template-columns:1fr}.game-card.featured,.work-item.large{grid-column:span 1}.contact-box{grid-template-columns:1fr;padding:30px 22px}.contact-intro h2{font-size:38px}.footer-wrap{grid-template-columns:1fr}.copyright{text-align:right}.footer-links{flex-wrap:wrap}.contact-form{grid-template-columns:1fr}.contact-form label:nth-of-type(3),.contact-form label:nth-of-type(4),.contact-form button,.form-message{grid-column:auto}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+.book-card {
+    max-width: 500px;
+    padding: 25px;
+    border-radius: 16px;
+    background: #25252d;
+    color: white;
+    text-align: center;
+}
+
+.book-card a {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 8px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.read-btn {
+    background: #b89b6a;
+    color: white;
+}
+
+.download-btn {
+    background: #3a3a45;
+    color: white;
+}
