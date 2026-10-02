@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ألعاب سوسو</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0a1a3f;--blue:#2a62b8;--bg:#f4f8ff;--mut:#51648c;--line:rgba(10,26,63,.22)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--navy);font-family:Cairo,Tahoma,Arial,sans-serif;line-height:1.7}
+nav{position:fixed;top:0;inset-inline:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top,0px)) 24px 14px;background:linear-gradient(#040c24cc,transparent)}
+nav ul{display:flex;gap:32px;list-style:none;margin:0;padding:0}
+nav a{color:#e8f0ff;text-decoration:none;font-weight:700;font-size:15px;opacity:.8}
+nav a:hover{opacity:1}
+#music{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.6);background:rgba(4,12,36,.35);color:#fff;font-size:19px;cursor:pointer}
+#music.on{background:#fff;color:var(--navy);animation:pulse 2.4s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 12px rgba(255,255,255,.18)}}
+.hero{position:relative;height:100vh;min-height:600px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding:22vh 20px 0;background:linear-gradient(180deg,#040c24 0%,#0c2a63 28%,#3b73c4 55%,#b9d3f7 80%,#f4f8ff 100%)}
+.glow{position:absolute;inset:0;background:radial-gradient(40% 35% at 50% 72%,rgba(255,255,255,.85),transparent 70%)}
+#fx{position:absolute;inset:0;width:100%;height:100%}
+video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4;mix-blend-mode:screen}
+.land{position:absolute;bottom:0;left:-3%;width:106%;height:55%;pointer-events:none}
+.hero>.t{position:relative;z-index:3}
+.hero h1{font-size:clamp(52px,11vw,120px);font-weight:900;margin:0;line-height:1.2;color:#fff;text-shadow:0 0 50px rgba(160,200,255,.65)}
+.cta{display:inline-block;margin-top:34px;padding:12px 52px;font-weight:700;font-size:18px;text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,.7);background:rgba(255,255,255,.06);backdrop-filter:blur(4px);transition:.3s}
+.cta:hover{background:#fff;color:var(--navy)}
+.social{position:absolute;bottom:calc(20px + env(safe-area-inset-bottom,0px));inset-inline:0;z-index:4;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:0 10px}
+.social a{color:var(--navy);text-decoration:none;font-size:14px;font-weight:700;padding:6px 18px;border:1px solid var(--line)}
+.social a:hover{background:var(--navy);color:#fff}
+section{max-width:1000px;margin:0 auto;padding:70px 20px 90px}
+h2{text-align:center;font-size:34px;margin:0 0 40px;font-weight:900}
+h2::after{content:"";display:block;width:60px;height:2px;background:var(--blue);margin:10px auto 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.card{background:#fff;border:1px solid var(--line);padding:26px;display:flex;flex-direction:column;gap:10px;transition:.3s}
+.card:hover{border-color:var(--navy);box-shadow:0 12px 40px rgba(42,98,184,.22);transform:translateY(-4px)}
+.card h3{margin:0;font-size:24px;font-weight:900}
+.card p{margin:0;color:var(--mut);font-size:15px;flex:1}
+.row{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:14px;margin-top:6px}
+.price{font-weight:900;color:var(--blue);font-size:18px}
+.btn{color:var(--navy);padding:6px 24px;border:1px solid var(--navy);font-weight:700;text-decoration:none;transition:.25s}
+.btn:hover{background:var(--navy);color:#fff}
+footer{text-align:center;padding:26px 20px;color:var(--mut);border-top:1px solid var(--line)}
+@media(max-width:700px){nav ul{display:none}}
+</style>
+</head>
+<body>
+<nav>
+<ul><li><a href="#top">الرئيسية</a></li><li><a href="#games">الألعاب</a></li><li><a href="#contact">تواصل</a></li></ul>
+<button id="music" title="موسيقى">♪</button>
+</nav>
+
+<header class="hero" id="top">
+<div class="glow"></div>
+<canvas id="fx"></canvas>
+<video id="bgv" autoplay muted loop playsinline><source src="bg.mp4" type="video/mp4"></video>
+<svg class="land" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+<path fill="#1b4a9a" opacity=".35" d="M0 400V250l120-40 40 30 80-70 30 20 90 70 130-60 110 50 150-90 40 30 140-50 130 70 120-30 100 60 110-20 140 40v240z"/>
+<path fill="#2a62b8" opacity=".5" d="M0 400V320l220-50 200 50 220-40 230 55 200-45 170 30v130z"/>
+<path fill="#f4f8ff" d="M0 400V352Q360 322 720 346T1440 338V400Z"/>
+<g fill="#0a1a3f"><path d="M714 346 716 196h8l2 150z"/><rect x="700" y="190" width="40" height="6" rx="1"/><rect x="718" y="160" width="4" height="30"/><circle cx="720" cy="156" r="5"/></g>
+</svg>
+<h1 class="t">ألعاب سوسو</h1>
+<div class="t"><a class="cta" href="#games">تصفح الألعاب</a></div>
+<div class="social" id="contact">
+<a href="https://wa.me/201008436636">واتساب</a><a href="#">يوتيوب</a><a href="#">ديسكورد</a><a href="#">تيليجرام</a><a href="#">فيسبوك</a>
+</div>
+</header>
+
+<section id="games">
+<h2>الألعاب</h2>
+<div class="grid">
+<div class="card"><h3>الرماد</h3><p>أكشن فانتازيا مظلمة، فارس يقوم من رماد عالم احترق ويواجه ظلامه.</p><div class="row"><span class="price">50 ج.م</span><a class="btn" href="https://wa.me/201008436636?text=عاوز%20أشتري%20لعبة%20الرماد">اشتري</a></div></div>
+<div class="card"><h3>سباق الصحراء</h3><p>سباق سيارات واقعي. (غيّر الاسم والوصف)</p><div class="row"><span class="price">30 ج.م</span><a class="btn" href="https://wa.me/201008436636?text=عاوز%20أشتري%20سباق%20الصحراء">اشتري</a></div></div>
+<div class="card"><h3>لعبتك الجاية</h3><p>مكان لوصف لعبة تانية. (غيّر الاسم والوصف)</p><div class="row"><span class="price">قريباً</span><a class="btn" href="https://wa.me/201008436636">تواصل</a></div></div>
+</div>
+</section>
+<footer>© ألعاب سوسو</footer>
+
+<script>
+// ===== نجوم ورماد أبيض بيطير ببطء =====
+const cv=document.getElementById('fx'),c=cv.getContext('2d');let W,H;
+function rs(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight}
+rs();addEventListener('resize',rs);
+const stars=Array.from({length:110},()=>({x:Math.random(),y:Math.random()*.45,r:Math.random()*1.2+.3,p:Math.random()*6}));
+const mk=()=>({x:Math.random(),y:Math.random()*1.1,s:Math.random()*.0004+.00008,r:Math.random()*1.8+.6,d:Math.random()*6});
+const ash=Array.from({length:70},mk);
+(function loop(t){
+ c.clearRect(0,0,W,H);
+ stars.forEach(s=>{c.globalAlpha=.25+.6*Math.abs(Math.sin(t/1100+s.p));c.fillStyle='#fff';c.beginPath();c.arc(s.x*W,s.y*H,s.r,0,7);c.fill()});
+ ash.forEach(a=>{a.y-=a.s;a.x+=Math.sin(t/1800+a.d)*.0004;if(a.y<-.05){Object.assign(a,mk());a.y=1.05}
+  c.globalAlpha=.55;c.fillStyle='#fff';c.shadowBlur=8;c.shadowColor='#bcd8ff';c.beginPath();c.arc(a.x*W,a.y*H,a.r,0,7);c.fill();c.shadowBlur=0});
+ requestAnimationFrame(loop);
+})(0);
+
+// ===== الفيديو: لو مفيش bg.mp4 بيتخفى =====
+const v=document.getElementById('bgv');
+v.querySelector('source').addEventListener('error',()=>v.remove());
+
+// ===== موسيقى واحدة: أمبينت قوطي هادي (مولّدة بالكود، بدون حقوق) =====
+// لو عاوز أغنيتك بدلها: حط AUDIO_FILE = 'music/song.mp3'
+const AUDIO_FILE='';
+let ctx,m,timers=[],playing=false,ci=0;
+const btn=document.getElementById('music');
+const chords=[[146.83,174.61,220],[116.54,146.83,174.61],[174.61,220,261.63],[130.81,164.81,196]];
+const bells=[293.66,349.23,392,440,523.25,587.33];
+const audio=new Audio();audio.loop=true;
+function impulse(){const n=ctx.sampleRate*4.5,b=ctx.createBuffer(2,n,ctx.sampleRate);
+ for(let k=0;k<2;k++){const d=b.getChannelData(k);for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/n,2.6)}return b}
+function pad(){
+ const t=ctx.currentTime;
+ chords[ci++%chords.length].forEach(f=>{
+  [-8,0,8].forEach(dt=>{
+   const o=ctx.createOscillator(),lp=ctx.createBiquadFilter(),g=ctx.createGain();
+   o.type='sawtooth';o.frequency.value=f;o.detune.value=dt;lp.type='lowpass';lp.frequency.value=650;
+   g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(.032,t+3);g.gain.linearRampToValueAtTime(.0001,t+8.5);
+   o.connect(lp);lp.connect(g);g.connect(m.dry);g.connect(m.wet);o.start(t);o.stop(t+9);
+  });
+  const s=ctx.createOscillator(),sg=ctx.createGain();
+  s.type='sine';s.frequency.value=f*2;
+  sg.gain.setValueAtTime(.0001,t);sg.gain.linearRampToValueAtTime(.02,t+3.5);sg.gain.linearRampToValueAtTime(.0001,t+8.5);
+  s.connect(sg);sg.connect(m.wet);s.start(t);s.stop(t+9);
+ });
+}
+function bell(){
+ if(Math.random()<.3)return;
+ const t=ctx.currentTime,f=bells[Math.floor(Math.random()*bells.length)];
+ [1,2.01].forEach((k,i)=>{
+  const o=ctx.createOscillator(),g=ctx.createGain();
+  o.type='sine';o.frequency.value=f*k;
+  g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(i?.02:.07,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+6);
+  o.connect(g);g.connect(m.wet);g.connect(m.dry);o.start(t);o.stop(t+6.2);
+ });
+}
+function start(){
+ if(AUDIO_FILE){audio.src=AUDIO_FILE;audio.play().catch(()=>{});return}
+ ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();
+ if(ctx.state==='suspended')ctx.resume();
+ const out=ctx.createGain();out.gain.setValueAtTime(.0001,ctx.currentTime);out.gain.linearRampToValueAtTime(.9,ctx.currentTime+3);
+ const dry=ctx.createGain();dry.gain.value=.5;
+ const wet=ctx.createGain();wet.gain.value=1;
+ const cv2=ctx.createConvolver();cv2.buffer=impulse();
+ dry.connect(out);wet.connect(cv2);cv2.connect(out);out.connect(ctx.destination);
+ const dr=ctx.createOscillator(),dg=ctx.createGain();
+ dr.type='sine';dr.frequency.value=73.42;dg.gain.value=.12;dr.connect(dg);dg.connect(out);dr.start();
+ m={out,dry,wet,dr};
+ pad();bell();
+ timers=[setInterval(pad,8000),setInterval(bell,3200)];
+}
+function stop(){
+ timers.forEach(clearInterval);timers=[];audio.pause();
+ if(m){const o=m.out,d=m.dr;o.gain.cancelScheduledValues(ctx.currentTime);o.gain.setValueAtTime(o.gain.value,ctx.currentTime);o.gain.linearRampToValueAtTime(.0001,ctx.currentTime+1);
+  setTimeout(()=>{try{d.stop();o.disconnect()}catch(e){}},1200);m=null}
+}
+btn.onclick=()=>{if(playing){stop();playing=false;btn.classList.remove('on')}else{start();playing=true;btn.classList.add('on')}};
+</script>
+</body>
+</html>
